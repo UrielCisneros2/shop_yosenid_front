@@ -495,7 +495,7 @@ function TallasCantidades(props) {
 					<div className="contenedor-button-vista">
 						<div>
 							{<Button
-								className="d-block size-button-vista color-boton color-font-boton d-none"
+								className=" size-button-vista color-boton color-font-boton d-none"
 								//type="primary"
 								size="large"
 								onClick={() => Pedido()}
