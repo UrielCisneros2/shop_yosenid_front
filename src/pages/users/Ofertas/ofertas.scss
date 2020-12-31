@@ -1,0 +1,20 @@
+.principal-ofertas{
+    color: white;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    padding: 10px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+.contenedor-card-ofertas{
+    width: 230px;
+    margin: 5px;
+}
+
+@media(max-width: 768px){
+    .contenedor-card-ofertas{
+        width: 90vw;
+        margin: 5px;
+    }
+  }

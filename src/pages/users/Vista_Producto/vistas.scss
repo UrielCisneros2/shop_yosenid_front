@@ -1,0 +1,104 @@
+.caracteristicas{
+    background: #ffffff ;
+}
+.titulo-principal{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.titulos-vista-productos{
+    font-size: 26px;
+    font-weight: bold;
+}
+.titulo-precio{
+    font-size: 28px;
+    display: inline;
+}
+.titulo-porcentaje{
+    font-size: 18px!important;
+}
+.titulo-porcentaje-sugerencia{
+    font-size: 18px!important;
+}
+.talla-vista-producto{
+    margin: 3px;
+}
+.descripcion-sm{
+    display: none;
+}
+.read-more{
+    height: auto;
+    font-size: 16px;
+    padding: 20px;
+}
+.read-less{
+    padding: 20px;
+    font-size: 16px;
+    max-height: 250px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.texto-ver-mas{
+    color: #2196F3;
+    cursor: pointer;
+}
+.disponibilidad-p{
+    font-size: 18px;
+    color: rgba(255, 0, 0, 0.507);
+}
+.disponibilidad-p-disponible{
+    font-size: 18px;
+}
+.contenedor-p-seleccion-compra > p {
+    font-size: 18px;
+}
+.disponibilidad{
+    color: rgba(255, 0, 0, 0.507);
+}
+.contenedor-scroller{
+    display: flex;
+    overflow-x: scroll;
+}
+.contenedor-card-tamaño{
+    min-width: 250px;
+}
+.contenedor-img-tarjetas{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.img-tarjetas{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 10px;
+}
+.size-button-vista{
+    width: 100%;
+}
+.envio-texto{
+    color: #22BB33;
+}
+
+.formas-pago{
+    display: flex!important;
+    align-items: center;
+}
+.producto-descripcion{
+    font-size: 26px;
+    color: #000;
+}
+@media(max-width: 768px){
+    .descripcion-sm{
+        display: block;
+    }
+    .descripcion-lg{
+        display: none;
+    }
+    .contenedor-button-vista{
+        display: flex;
+        justify-content: center;
+    }
+    .size-button-vista{
+        width: 200px;
+    }
+  }

@@ -1,0 +1,27 @@
+.titulo-tienda-vista-producto{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.direccion-tienda-vista-producto{
+    font-size: 17px;
+}
+.contenedor-info-tienda {
+    margin-top: 5rem!important;
+}
+.contenedor-imagen-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-imagen-info-tienda{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-info-tienda{
+    max-width: 100%;
+    max-height: 100%;
+}

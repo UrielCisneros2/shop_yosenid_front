@@ -1,0 +1,103 @@
+@media(max-width: 768px){
+    .imgUploads{
+        height: unset!important;
+    }
+    .imgStyle{
+        display: inline-block!important;
+    }
+    .responsive{
+        display: inline-block!important;
+        margin-left: -2rem;
+    }
+    .contenedor-galeria{
+        justify-content: unset!important;
+    }
+    .padre{
+        display: inline-flex;
+        width: 400px!important;
+        overflow-x: scroll;
+    }
+    .imgPreview{
+        width: 100%;
+        height: 100%;
+    }
+    .iconos{
+        width: 58%!important;
+        height: 65%!important;
+        position: absolute;
+        transition: .5s;
+        display: none; 
+    }
+    .padre-iconos:visited > .iconos{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .iconos:hover{
+        background: rgba(0, 0, 0, 0.5);
+        transition: all .2s ease-in-out;
+    }
+}
+.responsive{
+    display: flex;
+    margin-left: 10px;
+}
+.imgStyle{
+    margin: .2rem;
+    width: 88px;
+    height: 88px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.padre{
+    margin-top: 1rem;
+}
+.padre-iconos:hover > .iconos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.iconos{
+    width: 21%;
+    height: 26%;
+    position: absolute;
+    transition: .5s;
+    display: none; 
+}
+.iconos:hover{
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-in-out;
+}
+.ver, .eliminar, .modificar{
+    cursor: pointer;
+    color: white;
+}
+.imgPreview-actualizar-galeria {
+    width: 100%;
+    height: 400px;
+    border: dashed .5px rgb(182, 182, 182);
+}
+.imgUploads {
+    width: 150px;
+    height: 350px;
+}
+.upload-text-display .ant-upload-list{
+    display: none;
+}
+/* .ant-upload-list-item-info::before{
+    left: 0!important;
+} */
+/* .ant-upload-list-text{
+    display: none;
+} */
+.imagen-actualizar-galeria{
+    max-height: 100%;
+    max-width: 100%;
+}
+.padre-iconos{
+    height: 86px!important;
+    width: 86px!important;
+}
+.img{
+    max-height: 100%;
+    max-width: 100%;
+}

@@ -1,0 +1,28 @@
+$rojo-intenso: #ff0000;
+$rojo-medio: rgb(255, 88, 88);
+$rojo-bajo: #ffe6e6;
+
+$verde-intenso: #358a35;
+$verde-medio: #5cb85c;
+$verde-bajo: #ebffeb;
+
+$amarillo-intenso: #ffa425;
+$amarillo-medio: #f0ad4e;
+$amarillo-bajo: #fff3e2;
+
+
+.alerta-error {
+    background-color: $rojo-bajo;
+    border-left: $rojo-medio .5rem solid;
+    color: $rojo-intenso;
+}
+.alerta-success {
+    background-color: $verde-bajo;
+    border-left: $verde-medio .5rem solid;
+    color: $verde-intenso;
+}
+.alerta-warning {
+    background-color: $amarillo-bajo;
+    border-left: $amarillo-medio .5rem solid;
+    color: $amarillo-intenso;
+}

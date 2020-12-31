@@ -1,0 +1,32 @@
+.tabla-inventario p{
+    font-size: 16px!important;
+    margin-bottom: 0;
+}
+.badge-inventario{
+    /* border: dashed 1px; */
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+.ant-scroll-number, .ant-badge-count, .ant-badge-multiple-words{
+    z-index: 1;
+}
+.search-width{
+    width: 50%;
+}
+
+.search-container-responsive{
+    display: none;
+}
+
+@media(max-width: 768px){
+    .search-width{
+        width: 100%;
+    }
+    .search-container{
+        display: none;
+     }
+     .search-container-responsive{
+        display: block;
+    }
+}

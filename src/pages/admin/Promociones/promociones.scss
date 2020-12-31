@@ -1,0 +1,44 @@
+@media(max-width: 768px){
+    .botones-accion{
+        box-shadow: 0px -2px 3px -1px rgba(0,0,0,0.09);
+        padding: 10px 0 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .search-width{
+        width: 100%;
+    }
+}
+.search-width{
+    width: 50%;
+}
+.contenedor:hover{
+    transition: .2s;
+    box-shadow: 0px 0px 40px -16px rgba(0,0,0,0.3)!important;
+}
+.contenedor{
+    transition: .2s;
+}
+.titulo-producto{
+    width: 50%;
+}
+.sugerencia-box{
+    max-width: 45%;
+}
+.display-block{
+    display: block;
+}
+.imagen-promocion-principal{
+    max-width: 100%;
+    max-height: 100%;
+}
+.col-contenedor{
+    max-width: 800px;
+}
+.contenedor-masivas{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

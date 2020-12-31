@@ -1,0 +1,27 @@
+.categorias-navbar{
+    /* height: 40px; */
+    /* display: flex; */
+    border: none;
+}
+.spin-nav-categorias{
+    width: 20px;
+}
+
+.size-layout-cat{
+    height: 30px;
+}
+.size-menu-cat{
+    height: 100%;
+    line-height: normal;
+}
+.size-submenu-cat{
+   height: 100%;
+}
+.size-submenu-cat > .ant-menu-submenu-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.size-submenu-cat > .ant-menu-submenu-title {
+    font-weight: 300;
+}

@@ -1,0 +1,57 @@
+
+
+.confirmacion_final{
+    width: 100%;
+}
+
+.imagen-card{
+    text-align: right
+}
+
+@media(max-width: 768px){
+    .confirmacion_final{
+        border: 1px solid black;
+        width: 300px;
+    }
+}
+.visa{
+    color: rgba(68, 68, 253, 0.877);
+}
+.contenedor-direccion-conf{
+    max-width: 100%;
+    margin: 5px;
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
+}
+.contenedor-info-pago{
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
+    max-width: 100%;
+}
+.icono-info{
+    margin: 0!important;
+    max-width: 100%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido-info{
+    margin: 0!important;
+}
+.c0{
+    padding-left: 0!important;
+    padding-right: 0!important;
+    background-color: #fff;
+}
+.c1{
+    width: 100%;
+}
+.info-pedido{
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    border-left: rgb(192, 192, 192) solid 1px;
+}
+.info-domicilio{
+    display: flex;
+    align-items: center;
+}

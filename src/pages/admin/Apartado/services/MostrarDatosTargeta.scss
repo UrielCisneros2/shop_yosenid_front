@@ -1,0 +1,35 @@
+
+@media(max-width: 768px){
+    .titulos-info-apartados{
+        line-height: 0;
+        display: block!important;
+    }
+    .data-info-apartados{
+        float: none!important;
+    }
+    .contenedor-card-apartados{
+        height: 270px!important;
+    }
+}
+.sistema-apartado p{
+    margin: 0;  
+}
+.titulos-info-apartados{
+    line-height: 0;
+    display: inline;
+    font-weight: bold;
+}
+.data-info-apartados{
+    float: right;
+    max-width: 80%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.precio-total-pedidos{
+    font-size: 18px!important;
+}
+
+.contenedor-card-apartados{
+    height: 240px;
+}

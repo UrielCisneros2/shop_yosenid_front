@@ -1,0 +1,8 @@
+.breadcrumb-head{
+    display: block;
+}
+@media(max-width: 768px){
+    .breadcrumb-head{
+        display: none;
+    }
+}

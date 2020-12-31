@@ -1,0 +1,114 @@
+@import '~antd/dist/antd.css';
+
+.barsMenu, .top-menu-responsive{
+  display: none;
+}
+.ant-layout-header{
+  padding: 0;
+  background-color: white;
+}
+.contenedor-logo{
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-logo > a{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-logo-principal{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.top-menu{
+  margin: 0!important;
+}
+.navbar-menu-general{
+  border: none;
+}
+.search-navbar{
+  max-width: 100%;
+  max-height: 75%!important;
+}
+/* .nav-font-color {
+  padding: 0 20px!important;
+} */
+
+/* TAMAÑOS NAV PRINCIPAL */
+.row-logo-search{
+  height: 100%!important;
+}
+.row-logo-search-2{
+  display: flex;
+  align-items: center;
+}
+
+.a0{
+  height: 50px;
+}
+.a1{
+  height: 100%;
+  line-height: normal;
+}
+.a2{
+  height: 100%;
+  line-height: normal;
+}
+.a3{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+.a4{
+  height: 100%;
+  
+}
+.a5{
+  height: 100%;
+  
+}
+.a6{
+  height: 100%;
+  
+}
+.a6 > .centrar-nav, .ant-menu-submenu-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media(max-width: 992px){
+  .barsMenu{
+    display: inline-block;
+  }
+  .top-menu{
+    display: none;
+  }
+  .top-menu-responsive{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menuCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/*   .ant-layout-header{
+    padding: 0;
+
+  } */
+  .search-nav-responsive{
+    width: 80%;
+  }
+}

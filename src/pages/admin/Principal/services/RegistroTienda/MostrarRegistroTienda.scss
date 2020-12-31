@@ -1,0 +1,39 @@
+
+/* 
+p{
+    font-weight: bold;
+} */
+
+/* span{
+    margin-left: 10px;
+} */
+
+.info-tienda{
+
+    &__button-registro{
+        text-align: right!important;
+        margin-bottom: 20px!important;
+    }
+}
+
+.mostrarRegistroTienda-imagen{
+    display: flex!important;
+    flex-direction: row!important;
+    flex-wrap: wrap!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+.contenedor-boton-datostienda{
+    display: flex;
+    justify-content: flex-end;
+}
+.politicas-p > p {
+    font-size: 18px;
+    margin: 5px;
+}
+@media(max-width: 768px){
+    .contenedor-boton-datostienda{
+        display: flex;
+        justify-content: center;
+    } 
+}

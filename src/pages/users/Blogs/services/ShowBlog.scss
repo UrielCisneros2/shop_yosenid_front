@@ -1,0 +1,48 @@
+
+
+.info-blog{
+    margin-top: 50px;
+    max-width: 1200px;
+    margin: auto auto;
+    
+    &__div-imagen{
+        height: 1000px;
+    }
+
+    &__titulo{
+        text-align: center;
+        margin-bottom: 0;
+        color: black;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    &__fecha{
+        text-align: center;
+        color: gray;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    &__descripcion{
+        color: black;
+        font-size: 16px;
+        margin-bottom: 100px;
+        text-align: justify;
+    }
+
+}
+.info-blog__descripcion img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.contenedor-imagen-blog-principal{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-blog-principal{
+    max-height: 100%;
+    max-width: 100%;
+}

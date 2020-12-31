@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+$color-blog: #ffff;
+
+/* NAVBAR VARIABLES */
+/* $bg-color-navbar: #B11F24; */
+$bg-color-navbar: #ffffff;
+$bg-color-navbar-active: #ffffff;
+$border-color-active: #B11F24;
+/* $border-color-navbar: #B11F24; */
+$font-color-navbar: rgb(0, 0, 0);
+$font-color-navbar-hover: #771128;
+$font-color-navbar-active: #CE414B;
+
+/* NAVBAR CATEGORIAS VARIABLES */
+$bg-color-navbar-categorias:  #CE414B;
+$font-color-navbar-categorias: rgb(255, 255, 255);
+$font-color-navbar-categorias-hover: #EDA1AB;
+
+/* CARDS VARIABLES */
+$bg-color-cards-productos:  #F7F7F7;
+
+/* SPINER VARIABLES */
+$color-spiner: #B11F24;
+
+/* BUTTONS VARIABLES */
+$color-botones: #B11F24;
+$color-botones-hover: #CE414B;
+$color-botones-font:  #F7F7F7;
+$color-botones-secundario: #343434;
+$color-botones-sec-hover: #727272;
+
+/* STEPS VARIABLES */
+$bg-color-steps: #EDA1AB;
+$font-color-steps-inactive: #ffff;
+$bg-color-steps-active: #B11F24;
+$border-color-steps: #771128;
+/* TABS VARIABLES */
+$color-tabs: #B11F24;
+$color-tabs-hover: #B11F24;
+$color-tabs-border: #CE414B;
+
+$bg-color-tags: #EDA1AB;
+
+/* FOOTER VARIABLES */
+$bg-color-footer: #343434;
+$font-color-footer: rgb(255, 255, 255);
+
+/* BACKGROUND LAYOUT */
+$bg-layout: #ffff;
+
+/* FONT FAMILY STYLES */
+h1, h2, h3, h4, h5, h6{
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+p, a, li{
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; 
+}
+
+/* LAYOUT */
+.bg-layout{
+    background-color: $bg-layout;
+}
+
+/* NAVBAR STYLES */
+.navbar-menu-general{
+    background-color: $bg-color-navbar;
+}
+.navbar-menu-general > .ant-menu-item-selected{
+    background-color: $bg-color-navbar-active!important;
+}
+.navbar-menu-general > .ant-menu-item-selected {
+    color: $font-color-navbar-active!important;
+    border-bottom: 3px solid $border-color-active!important;
+    /* border-top: 2px solid $border-color-active!important;
+    border-bottom: none!important; */
+}
+.drawer-background .ant-drawer-body{
+    background-color: $bg-color-navbar;
+    border-color: rgb(255, 255, 255);
+}
+.drawer-background .ant-drawer-header{
+    background-color: $bg-color-navbar;
+    border-color: rgb(255, 255, 255);
+}
+.nav-font-color{
+    color: $font-color-navbar;
+   /*  border-bottom: none!important; */
+} 
+.nav-font-color:hover{
+    color: $font-color-navbar-hover!important;
+    border-bottom: 3px solid $border-color-active!important;
+    /* border-top: 2px solid $border-color-active!important;
+    border-bottom: none!important; */
+}
+.menu-responsivo-icon{
+    color: $font-color-navbar;
+}
+
+/* NAVBAR CATEGORIAS STYLES */
+.categorias-navbar{
+    background-color: $bg-color-navbar-categorias;
+}
+.categorias-navbar .ant-menu-submenu-title{
+    color: $font-color-navbar-categorias!important;
+}
+.categorias-navbar > .ant-menu-submenu-selected{
+    color: $font-color-navbar-categorias!important;
+}
+.container-subcategorias-nav{
+    background-color: $bg-color-navbar-categorias;
+    border-bottom: solid $bg-color-navbar-categorias;
+    border-top: solid $bg-color-navbar-categorias;
+}
+.nav-font-color-categorias{
+    color: $font-color-navbar-categorias;
+    border-bottom: none!important;
+} 
+.nav-font-color-categorias:hover{
+    color: $font-color-navbar-categorias-hover!important;
+}
+.nav-font-color-categorias:hover{
+    color: $font-color-navbar-categorias-hover!important;
+}
+.nav-font-color-categorias::before{
+    color: $font-color-navbar-categorias-hover!important;
+}
+.container-subcategorias-nav > .ant-menu-submenu-title:hover{
+    color: $font-color-navbar-categorias-hover!important;
+}
+
+/* SEPARADORES */
+
+/* @media(max-width: 768px){
+    .textos-home > h2 {
+        font-size: 15px;
+    }
+    .textos-home > p {
+        font-size: 10px;
+    }
+} */
+
+/* CARDS */
+.contenedor-card-body > .ant-card-body{
+    padding: 10px;
+    background-color: $bg-color-cards-productos; 
+    min-height: 100px;
+}
+
+/* SPINER */
+.spiner .ant-spin-dot-item{
+    background-color: $color-spiner;
+}
+.spiner{
+    color: $color-spiner;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* BUTTONS */
+.color-boton{
+    background-color: $color-botones;
+    border-color: $color-botones;
+    color: $color-botones-font!important;
+}
+.color-boton:hover{
+    background-color: $color-botones-hover;
+    border-color: $color-botones;
+}
+.color-boton:focus{
+    background-color: $color-botones-hover;
+    border-color: $color-botones;
+}
+
+//BUTTONS SECUNDARIOS
+.color-boton-sec{
+    background-color: $color-botones-secundario!important;
+    border-color: $color-botones-secundario!important;
+    color: $color-botones-font!important;
+}
+.color-boton-sec:hover{
+    background-color:  $color-botones-sec-hover;
+    border-color: $color-botones-sec-hover;
+}
+.color-boton-sec:focus{
+    background-color:  $color-botones-sec-hover;
+    border-color: $color-botones-sec-hover;
+}
+
+//SOLO FUENTES
+.color-fonts{
+    color: $color-botones!important;
+}
+.color-fonts:hover{
+    color: $border-color-active;
+}
+
+// COLOR DE TAGS
+.color-tags{
+    background-color: $bg-color-tags;
+}
+.color-border-tags{
+    border: 1px solid $border-color-active;
+}
+
+
+//ICONOS DE AVANCES
+.steps-colors .ant-steps-item-icon{
+    background-color:  $bg-color-steps;
+    border-color: $border-color-steps;
+    
+}
+.steps-colors .ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon{
+    background-color:  $bg-color-steps-active;
+}
+.steps-colors .ant-steps-icon{
+    color: $font-color-steps-inactive!important;
+
+}
+.steps-colors .ant-steps-item-title::after{
+    border-color:  $bg-color-steps-active!important;
+    background-color:  $bg-color-steps-active!important;
+}
+
+
+/* TABS */
+.tabs-colors .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    color: $color-tabs;
+}
+
+.tabs-colors .ant-tabs-tab:hover{
+    color: $color-tabs;
+}
+.tabs-colors .ant-tabs-ink-bar{
+    background-color: $color-tabs-border!important;
+}
+
+
+/*  FOOTER STYLES */
+.bg-footer{
+    background-color: $bg-color-footer;
+}
+.footer-font-color {
+    color: $font-color-footer;
+}
+.footer-font-color:hover {
+    color: $font-color-footer;
+}
+.footer-border {
+    border-color: $font-color-footer;
+}
+
+.info-recomended-sizes{
+    width: 50%;
+}
+
+// G A L E R I A
+.image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
+    border: 2px solid $bg-color-navbar;
+}
+
+
+//B L O G S
+.list-hover:hover .titulo-blog{
+    color: $bg-color-navbar-active!important;
+    transition: .3s;
+}
+.list-hover:hover{
+    box-shadow: 0px 0px 13px -2px $bg-color-navbar!important;
+    transition: .3s;
+}
+
+

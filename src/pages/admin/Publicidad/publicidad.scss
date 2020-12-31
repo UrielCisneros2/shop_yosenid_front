@@ -1,0 +1,38 @@
+
+.list-publicidad-imagen-container{
+    width: 400px;
+    height: 100px;
+}
+
+@media(max-width: 768px){
+    .list-publicidad-imagen-container{
+        width: 100%;
+        height: 100px;
+        
+    }
+    .list-publicidad-meta-container {
+        display: block!important;
+    }
+    .list-publicidad-titulos-container{
+        text-align: center;
+    }
+    .list-publicidad{
+        display: block;
+    }
+    .list-publicidad > .ant-list-item-action{
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+    .list-publicidad-checks-container{
+        display: flex;
+        align-items: flex-end;
+    }
+    .checktitle{
+        display: block;
+    }
+    .check-check{
+        display: block;
+    }
+    
+}

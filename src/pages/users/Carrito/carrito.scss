@@ -1,0 +1,82 @@
+
+.principal{
+    text-align: center; 
+    font-size: 30px;
+    height: '8vh';
+    color: white;
+    align-items: center;
+}
+.contenedor-imagen-vista-carrito{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.imagen-vista-carrito{
+    max-width: 100%;
+    max-height: 100%;
+}
+.precio-vista-carrito{
+    font-size: 28px;
+}
+.contenedor-datos-final-carrito > p{
+    font-size: 22px;
+}
+.disponibilidad-carrito{
+    pointer-events: none;
+
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: rgba(255, 255, 255, 0.651);
+}
+.titulo-disponible{
+    color: red;
+    font-size: 20px;
+}
+.detalles-carrito {
+    font-size: 16px;
+    padding: 5px;
+}
+.enlaces-carrito{
+    display: block!important;
+}
+.precio-carrito{
+    font-size: 24px;
+}
+.precio-anterior-carrito{
+    text-decoration: line-through;
+}
+.precio-promocion-carrito{
+    font-size: 24px;
+    display: inline;
+}
+.porcentaje-promocion-carrito{
+    font-size: 24px;
+    color: #22bb33;
+    display: inline;
+}
+.inputs-carrito{
+    margin: 0;
+}
+.inputs-carrito-talla{
+    margin-bottom: 10px;
+}
+.button-carrito-actualizar{
+    text-align: center;
+}
+/* .producto-eliminado{
+    border: red solid;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 1;
+} */
+@media(max-width: 768px){
+    /* .form-carrito-2{
+        margin-top: 1rem;
+    } */
+
+}

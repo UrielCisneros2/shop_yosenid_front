@@ -1,0 +1,26 @@
+.preloading {
+    position: fixed;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 9999;
+}
+.contenedor-preloading{
+    flex-direction:column;
+    display: flex;
+}
+.contenedor-logo-preloading{
+    width: 20vw;
+    height: 20vh;
+}
+.logo-preloading{
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 38px 39px -35px rgba(227,227,227,1);
+}
+.class-spin{
+    color: black!important;
+}

@@ -1,0 +1,55 @@
+
+.blogList{
+    text-decoration: none;
+    color: black;
+
+    &__lista{
+        border-bottom: 1px solid rgb(230, 230, 230) !important;
+    }
+
+    &__title{
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 35px;
+    }
+
+    &__author{
+        font-size: 20px;
+    }
+
+    &__content-description{
+        max-height: 250px;
+        max-width: 700px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.blogList:hover{
+    color: black;
+}
+
+
+.list-hover{
+    transition: .3s;
+}
+
+.contenedor-imagen-blog-list{
+    width: 272px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-blog-list{
+    max-width: 100%;
+    max-height: 100%;
+
+}
+.lienamientos{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

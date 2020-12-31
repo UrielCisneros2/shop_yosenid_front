@@ -1,0 +1,26 @@
+
+
+.detalle-apartado{
+    &__border{
+        border-bottom: 1px solid rgb(204, 193, 193);
+    }
+}
+.detalle-apartado h6 {
+    font-weight: bold;
+}
+
+.DetalleApartdado-imagen{
+    display: flex!important;
+    flex-direction: row!important;
+    flex-wrap: wrap!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+
+.detalle-contenido-talla{
+    font-size: 40px!important; 
+}
+
+.color-precio-apartado{
+    color: rgba(0, 0, 0, 0.281)
+}

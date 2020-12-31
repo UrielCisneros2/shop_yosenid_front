@@ -1,0 +1,33 @@
+/* For demo */
+.banner-user{
+  height: 330px;
+  width: 100%;
+}
+
+/* .banner-user-elem{
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+} */
+
+/* .banner-anim-elem .bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+} */
+.banner-elemento{
+  width: 100%!important;
+  height: 100%!important;
+  background-repeat: no-repeat;
+  background-attachment: center;
+  background-position: center center;
+  background-size: contain;
+}
+@media(max-width: 768px){
+  .banner-user{
+    height: 100px!important;
+  }
+}
