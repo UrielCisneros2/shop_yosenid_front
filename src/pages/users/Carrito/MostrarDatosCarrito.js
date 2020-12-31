@@ -155,14 +155,14 @@ function MostrarDatosProductos(props) {
 					</div>
 					<div className="col-lg-5 d-flex justify-content-center align-items-center mt-4">
 						<Space>
-						<Button
+						{<Button
 							size="large"
-							className="color-boton color-font-boton"
+							className="color-boton color-font-boton d-none"
 							style={{ width: 250, textAlign: 'center' }}
 							onClick={() => crearPedido()}
 						>
 							<ShoppingCartOutlined style={styles} /> Comprar ahora
-						</Button>
+						</Button>}
 						<Button
 							size="large"
 							className="color-boton color-font-boton"
