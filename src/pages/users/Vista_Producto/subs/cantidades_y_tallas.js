@@ -497,7 +497,7 @@ function TallasCantidades(props) {
 				) : (
 					<div className="contenedor-button-vista">
 						<div>
-							<Button
+							{/* <Button
 								className="d-block size-button-vista color-boton font-vista-prod"
 								//type="primary"
 								size="large"
@@ -506,7 +506,7 @@ function TallasCantidades(props) {
 							>
 								<TagsOutlined style={{ fontSize: 20 }} />
 								Comprar ahora
-							</Button>
+							</Button> */}
 							<Button
 								className="mt-3 d-block size-button-vista color-boton-sec font-vista-prod"
 								size="large"

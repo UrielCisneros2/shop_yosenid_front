@@ -341,14 +341,14 @@ function ListaCarrito(props) {
 					</div>
 				) : (
 					<div className="d-flex justify-content-center">
-						<Button
+						{/* <Button
 							type="link"
 							className="color-fonts font-des-car"
 							onClick={() => comprar()}
 							disabled={medidaDisponible !== '' ? true : false}
 						>
 							<ShoppingCartOutlined style={styles} />Comprar
-						</Button>
+						</Button> */}
 						<Button type="link" className="color-fonts font-des-car" onClick={() => eliminar()}>
 							<DeleteOutlined style={styles} />Eliminar
 						</Button>
