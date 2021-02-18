@@ -46,7 +46,6 @@ function CarouselOfertas(props) {
 						className="bg banner-elemento"
 						alt="img-oferta"
 						style={{
-							
 							backgroundImage: `url(${aws + carousel.imagen})`,
 							cursor: 'pointer' 
 						}}

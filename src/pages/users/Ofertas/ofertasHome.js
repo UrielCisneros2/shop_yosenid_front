@@ -3,10 +3,15 @@ import clienteAxios from '../../../config/axios';
 import { Result, Row } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import './ofertas.scss';
-import ComponenteProductos from '../Productos/componente_productos';
+import ComponenteProductoGrande from '../Productos/Card_Grande/componente_producto_grande'
+// import ComponenteProductos from '../Productos/componente_productos';
+import CardSecundaria from '../Productos/Card_Secundaria/card_secundaria';
+
 import Spin from '../../../components/Spin';
 
 function OfertasHome(props) {
+	const {orientacion} = props;
+
 	const [ productos, setProductos ] = useState([]);
 	const [ loading, setLoading ] = useState(false);
 
@@ -17,7 +22,7 @@ function OfertasHome(props) {
 	async function obtenerProductos() {
 		setLoading(true);
 		await clienteAxios
-			.get(`/productos/promociones?limit=${12}&page=${1}`)
+			.get(`/productos?limit=${5}&page=${1}`)
 			.then((res) => {
 				setProductos(res.data.posts.docs);
 				setLoading(false);
@@ -27,9 +32,30 @@ function OfertasHome(props) {
 			});
 	}
 
-	const render = productos.map((productos) => (
-		<ComponenteProductos key={productos._id} productos={productos} />
-	));
+	const render = productos.map((productos, index) => {
+		if(orientacion == "derecha"){
+			if(index === 4){
+				return  <ComponenteProductoGrande key={productos._id} productos={productos} />
+			}else{
+				return <CardSecundaria key={productos._id} productos={productos}/>
+			}
+		}else if(orientacion == "izquierda"){
+			if(index === 0){
+				return  <ComponenteProductoGrande key={productos._id} productos={productos} />
+			}else{
+				return <CardSecundaria key={productos._id} productos={productos}/>
+			}
+		}else if(orientacion == "centro"){
+			if(index === 2){
+				return  <ComponenteProductoGrande key={productos._id} productos={productos} />
+			}else{
+				return <CardSecundaria key={productos._id} productos={productos}/>
+			}
+		}
+		else{
+			return <CardSecundaria key={productos._id} productos={productos}/>
+		}
+	});
 
 	if(productos.length === 0){
 		return null;

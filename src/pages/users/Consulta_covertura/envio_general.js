@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import clienteAxios from "../../../config/axios";
 
-import { notification, Alert } from "antd";
+import { notification} from "antd";
 import { CheckCircleFilled } from '@ant-design/icons';
-
+import '../../../scss/styleEspinoza.scss'
 
 export default function Envio_General() {
   const [dataEstados, setDataEstados] = useState([]);
@@ -33,10 +33,10 @@ export default function Envio_General() {
         {dataEstados.map((estado) => {
           if (estado.todos) {
             return (
-              <div style={{ fontSize: 15 }} className="envio-texto 4">
-              <CheckCircleFilled style={{ fontSize: 20, marginRight: 10 }} /> 
-                <spam >Tenemos envios a toda la republica Mexicana</spam>
-              </div>
+              <p className="envio-texto font-vista-prod">
+                <CheckCircleFilled style={{ fontSize: 20, marginRight: 10 }} /> 
+                  <spam >Tenemos envios a toda la republica Mexicana</spam>
+              </p>
             );
           } else {
               return null;

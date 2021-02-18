@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
 
 $color-blog: #ffff;
 
 /* NAVBAR VARIABLES */
 /* $bg-color-navbar: #B11F24; */
-$bg-color-navbar: #ffffff;
-$bg-color-navbar-active: #ffffff;
-$border-color-active: #0050e6;
+$bg-color-navbar:  #CC262A;
+$bg-color-navbar-active: #000000;
+$border-color-active: #000000;
 /* $border-color-navbar: #B11F24; */
 $font-color-navbar: rgb(0, 0, 0);
-$font-color-navbar-hover: #0050e6;
-$font-color-navbar-active: #0050e6;
+$font-color-navbar-hover: #2222a8;
+$font-color-navbar-active: #2222a8;
 
 /* NAVBAR CATEGORIAS VARIABLES */
-$bg-color-navbar-categorias:  #0050e6;
+$bg-color-navbar-categorias:  #CC262A;
 $font-color-navbar-categorias: rgb(255, 255, 255);
-$font-color-navbar-categorias-hover: #ffffff;
+$font-color-navbar-categorias-hover: #0050e6;
 
 /* CARDS VARIABLES */
 $bg-color-cards-productos:  #F7F7F7;
@@ -49,7 +49,7 @@ $bg-color-footer: #f5f5f5;
 $font-color-footer: rgb(0, 0, 0);
 
 /* BACKGROUND LAYOUT */
-$bg-layout: #ffff;
+$bg-layout: rgb(240, 240, 240);
 
 /* FONT FAMILY STYLES */
 h1, h2, h3, h4, h5, h6{
@@ -72,15 +72,17 @@ p, a, li{
 .navbar-menu-general{
     background-color: $bg-color-navbar;
 }
-.navbar-menu-general > .ant-menu-item-selected{
-    background-color: $bg-color-navbar-active!important;
-}
 .navbar-menu-general > .ant-menu-item-selected {
     color: $font-color-navbar-active!important;
     border-bottom: 3px solid $border-color-active!important;
     /* border-top: 2px solid $border-color-active!important;
     border-bottom: none!important; */
 }
+.navbar-menu-sesion > .ant-menu-item-selected {
+    color: $bg-color-navbar!important;
+    border-bottom:  solid white!important;
+}
+
 .drawer-background .ant-drawer-body{
     background-color: $bg-color-navbar;
     border-color: rgb(255, 255, 255);
@@ -99,9 +101,16 @@ p, a, li{
     /* border-top: 2px solid $border-color-active!important;
     border-bottom: none!important; */
 }
+.nav-font-color-sesion:hover{
+    color: $bg-color-navbar!important;
+    border-bottom: 3px solid white!important;
+    /* border-top: 2px solid $border-color-active!important;
+    border-bottom: none!important; */
+}
 .menu-responsivo-icon{
     color: $font-color-navbar;
 }
+
 
 /* NAVBAR CATEGORIAS STYLES */
 .categorias-navbar{
@@ -109,16 +118,18 @@ p, a, li{
 }
 .categorias-navbar .ant-menu-submenu-title{
     color: $font-color-navbar-categorias!important;
+    font-weight: bold!important;
 }
 .categorias-navbar > .ant-menu-submenu-selected{
     color: $font-color-navbar-categorias!important;
 }
 .container-subcategorias-nav{
     background-color: $bg-color-navbar-categorias;
-    border-bottom: solid $bg-color-navbar-categorias;
-    border-top: solid $bg-color-navbar-categorias;
+    // border-bottom: solid $bg-color-navbar-categorias;
+    // border-top: solid $bg-color-navbar-categorias;
 }
 .nav-font-color-categorias{
+    font-weight: bold;
     color: $font-color-navbar-categorias;
     border-bottom: none!important;
 } 
@@ -134,6 +145,14 @@ p, a, li{
 .container-subcategorias-nav > .ant-menu-submenu-title:hover{
     color: $font-color-navbar-categorias-hover!important;
 }
+.border-color-search{
+    border: 2.5px solid $bg-color-navbar;
+}
+
+//COLOR DE BORDES DE LAS CARDS
+.contenedor-card-producto-principal, .contenedor-card-producto-secundario, .contenedor-card-oferta-gigante, .item-menu-paginas{
+    border-right: 1px solid #e0e0e0;
+}
 
 /* SEPARADORES */
 
@@ -148,9 +167,16 @@ p, a, li{
 
 /* CARDS */
 .contenedor-card-body > .ant-card-body{
-    padding: 10px;
-    background-color: $bg-color-cards-productos; 
-    min-height: 100px;
+    padding: 0px!important;
+    // background-color: $bg-color-cards-productos; 
+    min-height: 90px;
+}
+.mini-contenedor-card-body > .ant-card-body{
+    min-height: 90px;
+    width: auto;
+}
+.color-contenedor-oferta-especial{
+    border: 3px solid $bg-color-navbar;
 }
 
 /* SPINER */
@@ -262,7 +288,7 @@ p, a, li{
 
 // G A L E R I A
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
-    border: 2px solid $bg-color-navbar;
+    border: .5px solid $bg-color-navbar;
 }
 
 
@@ -276,4 +302,11 @@ p, a, li{
     transition: .3s;
 }
 
+//BANNER SOBRE FOOTER
+.container-mini-banner{
+    background-color: $bg-color-navbar;
+}
+.card-informativa{
+    color: $font-color-navbar-categorias;
+}
 

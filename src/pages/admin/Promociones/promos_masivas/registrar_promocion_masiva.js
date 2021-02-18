@@ -124,7 +124,7 @@ export default function RegistroPromocionMasiva(props) {
 			setLoadingList(true);
 			await clienteAxios
 				.get(
-					`/productos/search?nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}`
+					`/productos/search?nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}&temporada=${busqueda}`
 				)
 				.then((res) => {
 					setData(res.data.posts);

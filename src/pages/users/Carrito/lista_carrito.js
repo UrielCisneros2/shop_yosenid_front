@@ -168,7 +168,7 @@ function ListaCarrito(props) {
 						<div className="col-lg-8">
 							<div>
 								<Link to={`/vista_producto/${carrito.idarticulo._id}`}>
-									<h3>{carrito.idarticulo.nombre}</h3>
+									<h3 className="font-carrito">{carrito.idarticulo.nombre}</h3>
 								</Link>
 								{!carrito.promocion ? (
 									<p className="precio-carrito">${formatoMexico(carrito.idarticulo.precio)}</p>
@@ -189,14 +189,14 @@ function ListaCarrito(props) {
 									</div>
 								)}
 								<div className="d-block d-lg-flex">
-									<Tag className="detalles-carrito color-border-tags">
+									<Tag className="font-des-car detalles-carrito color-border-tags">
 										Categoria: {carrito.idarticulo.categoria}
 									</Tag>
-									<Tag className="detalles-carrito color-border-tags">
+									<Tag className="font-des-car detalles-carrito color-border-tags">
 										Género: {carrito.idarticulo.genero}
 									</Tag>
 									{carrito.idarticulo.color && carrito.idarticulo.color !== '' ? (
-										<Tag className="detalles-carrito color-border-tags">
+										<Tag className="font-des-car detalles-carrito color-border-tags">
 											Color: {carrito.idarticulo.color}
 										</Tag>
 									) : (
@@ -216,9 +216,9 @@ function ListaCarrito(props) {
 									)}
 								</div>
 								{disponible.length ? (
-									<p className="titulo-disponible">Producto no disponible</p>
+									<p className="titulo-disponible font-des-car">Producto no disponible</p>
 								) : eliminado === true ? (
-									<p className="titulo-disponible">Este producto ya no existe</p>
+									<p className="titulo-disponible font-des-car">Este producto ya no existe</p>
 								) : (
 									<p />
 								)}
@@ -315,13 +315,13 @@ function ListaCarrito(props) {
 									</Form>
 									<div className="text-center">
 										<Button
-											className="color-boton-sec color-font-boton"
+											className="color-boton-sec color-font-boton font-des-car"
 											size="large"
 											onClick={() => actualizar(carrito._id, carrito.idarticulo.tipoCategoria)}
 										>
 											Modificar
 										</Button>
-										<p className="precio-vista-carrito">
+										<p className="precio-vista-carrito font-carrito">
 											${formatoMexico(obtenerSubtotal(carrito.cantidad, precio))}
 										</p>
 									</div>
@@ -335,7 +335,7 @@ function ListaCarrito(props) {
 			<div className="d-flex justify-content-center">
 				{disponible.length !== 0 ? (
 					<div>
-						<Button type="link" className="d-block d-lg-inline" onClick={() => eliminar()}>
+						<Button type="link" className="d-block d-lg-inline font-des-car" onClick={() => eliminar()}>
 							<DeleteOutlined style={styles} />Eliminar producto
 						</Button>
 					</div>
@@ -343,18 +343,18 @@ function ListaCarrito(props) {
 					<div className="d-flex justify-content-center">
 						<Button
 							type="link"
-							className="color-fonts"
+							className="color-fonts font-des-car"
 							onClick={() => comprar()}
 							disabled={medidaDisponible !== '' ? true : false}
 						>
 							<ShoppingCartOutlined style={styles} />Comprar
 						</Button>
-						<Button type="link" className="color-fonts" onClick={() => eliminar()}>
+						<Button type="link" className="color-fonts font-des-car" onClick={() => eliminar()}>
 							<DeleteOutlined style={styles} />Eliminar
 						</Button>
 						<Button
 							type="link"
-							className="color-fonts"
+							className="color-fonts font-des-car"
 							onClick={() => apartado()}
 							disabled={medidaDisponible !== '' ? true : false}
 						>

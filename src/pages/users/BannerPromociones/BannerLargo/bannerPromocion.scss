@@ -1,0 +1,35 @@
+.tit-banner{
+  text-align: left;
+  margin-left: 5%;
+  // font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+.banner-prin{
+  height: 190px;
+  width: 100%!important;
+  //transition: .2s;
+}
+.banner-prom{
+  width: 90%!important;
+  height: 100%!important;
+  background-repeat: no-repeat;
+  background-attachment: center;
+  background-position: center center;
+  background-size: contain;
+
+}
+  @media(max-width: 768px){
+    .banner-prin{
+      height: 100px!important;
+    }
+  }
+
+
+.div-cards{
+  margin-top: 30px;
+} 
+ 
+  
+
+  
+
+  

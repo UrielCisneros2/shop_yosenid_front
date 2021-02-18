@@ -115,17 +115,17 @@ function VistaProductos(props) {
 							<Galeria id={producto} />
 						</div>
 						<div className="descripcion-lg">
-							<p className="titulos-vista-productos producto-descripcion">Descripción</p>
+							<p className="font-secun producto-descripcion">Descripción</p>
 							<div
 								className={readMore}
 								dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(productos.descripcion) }}
 							/>
 							{readMore === 'read-less' ? (
-								<p className="texto-ver-mas" onClick={OnClickReadMore}>
+								<p className="font-vista-prod texto-ver-mas" onClick={OnClickReadMore}>
 									Ver más...
 								</p>
 							) : (
-								<p className="texto-ver-mas" onClick={OnClickReadMore}>
+								<p className="font-vista-prod texto-ver-mas" onClick={OnClickReadMore}>
 									Ver menos
 								</p>
 							)}
@@ -137,20 +137,20 @@ function VistaProductos(props) {
 						</div>
 					</div>
 					<div className="col-lg-4 border-left">
-						<h1 className="titulo-principal">{productos.nombre}</h1>
+						<p className="titulo-principal font-prin">{productos.nombre}</p>
 						{promocion.length === 0 ? (
-							<p className="titulo-precio-tachado precio-rebaja titulo-precio">
+							<p className="precio-prin titulo-precio-tachado precio-rebaja titulo-precio">
 								$ {formatoMexico(productos.precio)}
 							</p>
 						) : (
 							<div>
-								<p className="titulo-precio-tachado precio-producto">
+								<p className="titulo-precio-tachado precio-producto font-descrip">
 									$ {formatoMexico(productos.precio)}
 								</p>
-								<p className="titulo-precio precio-rebaja d-inline mr-3">
+								<p className="titulo-precio precio-rebaja d-inline mr-3 precio-prin">
 									$ {formatoMexico(promocion.precioPromocion)}
 								</p>
-								<p className="titulo-porcentaje porcentaje-descuento d-inline mr-2">
+								<p className="titulo-porcentaje porcentaje-descuento d-inline mr-2 font-descrip">
 									{agregarPorcentaje(promocion.precioPromocion, productos.precio)}% OFF
 								</p>
 							</div>
@@ -158,19 +158,19 @@ function VistaProductos(props) {
 						
 						{costoEnvio ? (
 							<div>
-								<p style={{ fontSize: 15 }} className="envio-texto">
+								<p className="envio-texto font-vista-prod">
 									<FontAwesomeIcon icon={faTruck} style={{ fontSize: 15, marginRight: 10 }} />{' '}
 									<span>Costo del envío:</span> <span>${costoEnvio.costoEnvio}</span>
 								</p>
-								<Envio_General />
+								<Envio_General className="mt-3" />
 								{costoEnvio.promocionEnvio ?  costoEnvio.descuento !== 0 ? (
 									<Alert
-										className="mt-2"
+										className="mt-3 font-vista-prod"
 										message={
 											costoEnvio.descuento !== 0 ? (
-												`¡En compras arriba de $${costoEnvio.promocionEnvio} el envío será GRATIS!`
+												<p>¡En compras arriba de ${costoEnvio.promocionEnvio} el envío será GRATIS!</p>
 											) : (
-												`¡En compras arriba de $${costoEnvio.promocionEnvio}, el envío será GRATIS!`
+												<p>¡En compras arriba de $${costoEnvio.promocionEnvio}, el envío será GRATIS!</p>
 											)
 										}
 										type="success"
@@ -195,10 +195,10 @@ function VistaProductos(props) {
 										<div />
 									) : (
 										<div className="col-4">
-											<p style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
+											<p className="font-vista-prod" style={{ fontWeight: "bold", marginBottom: 10 }}>
 												Género:
 											</p>
-											<Tag className="color-tags" style={{ fontSize: 16 }}>
+											<Tag className="font-vista-prod color-tags" >
 												{productos.genero}
 											</Tag>
 										</div>
@@ -207,8 +207,8 @@ function VistaProductos(props) {
 										<div />
 									) : (
 										<div className="col-6">
-											<p style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 5 }}>
-												Color: {productos.color}
+											<p className="font-vista-prod" style={{ marginBottom: 5 }}>
+												<spam style={{fontWeight: "bold"}} >Color:</spam> {productos.color}
 											</p>
 											<div
 												className="rounded-circle ml-2"
@@ -222,7 +222,7 @@ function VistaProductos(props) {
 						<Divider />
 						<TallasCantidades producto={productos} /> {/* Componente tallas */}
 						<Divider />
-						<p className="mb-3 formas-pago" style={{ fontSize: 20, fontWeight: 'bold' }}>
+						<p className="font-vista-prod mb-3 formas-pago" >
 							<CreditCardOutlined style={{ fontSize: 25 }} className="mr-2" />
 							Formas de Pago
 						</p>
@@ -241,18 +241,18 @@ function VistaProductos(props) {
 						<Divider />
 						<div className="descripcion-sm">
 							<Divider />
-							<p className="titulos-vista-productos text-center">Descripcion:</p>
-							<div style={{ fontSize: 18, textAlign: 'justify' }} className="px-3">
+							<p className="font-secun text-center">Descripcion:</p>
+							<div style={{textAlign: 'justify' }} className="px-3">
 								<div
 									className={readMore}
 									dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(productos.descripcion) }}
 								/>
 								{readMore === 'read-less' ? (
-									<p className="texto-ver-mas" onClick={OnClickReadMore}>
+									<p className="font-secun texto-ver-mas" onClick={OnClickReadMore}>
 										Ver más...
 									</p>
 								) : (
-									<p className="texto-ver-mas" onClick={OnClickReadMore}>
+									<p className="font-secun texto-ver-mas" onClick={OnClickReadMore}>
 										Ver menos
 									</p>
 								)}

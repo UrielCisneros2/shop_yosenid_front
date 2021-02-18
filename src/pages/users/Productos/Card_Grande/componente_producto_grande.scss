@@ -1,0 +1,104 @@
+.principal-productos{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    // padding: 15px;
+    font-size: 25px;
+    letter-spacing: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+.banner-producto{
+    max-width: 100%;
+}
+// .titulo-producto{
+//     width: 100%;
+// }
+// .titulo-elipsis{
+//     padding: 5px;
+//     height: 25px;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+/* .descripcion-producto{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+
+// .ant-col{
+//     width: 300px;
+// }
+// .size-col{
+//     min-width: 190px;
+// }
+.contenedor-oferta-especial{
+    border-radius: 6%;
+    cursor: pointer;
+}
+.contenedor-imagen-oferta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-oferta{
+    top: 0;
+    left: 0;
+}
+.contenedor-imagen-oferta-especial{
+    height: 280px; 
+    width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-producto-principal{
+    max-width: 100%;
+    max-height: 100%;
+}
+.rebajado{
+    font-size: 15px;
+}
+.contenedor-oferta{
+    position: absolute;
+}
+
+.contenedor-oferta-especial > p{
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(238, 155, 0);
+    width: 45px;
+}
+.contenedor-titulos-especial > h1 {
+    font-size: 18px;
+}
+.contenedor-precios-especial > h2 {
+    font-size: 16px;
+}
+.contenedor-precios-especial > h3 {
+    font-weight: bold;
+    font-size: 25px;
+}
+// .contenedor-precios-productos > p {
+//     font-size: 15px!important;
+// }
+@media(max-width: 768px){
+    // .titulo-elipsis{
+    //     width: 130px;
+    // }
+    .contenedor-imagen-producto-principal{
+        height: 250px; 
+        width: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .size-col{
+        min-width: 170px;
+    }
+}
+.card-precio-rebaja{
+    color:red;
+}
+
+

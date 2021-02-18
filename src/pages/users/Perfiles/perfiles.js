@@ -74,7 +74,7 @@ export default function Perfiles(props) {
 	return (
 		<Spin spinning={loading}>
 			<div className="container col-lg-6">
-				<h1 className="mt-5 text-center">Bienvenido a tu perfil</h1>
+				<h1 className="mt-5 text-center font-prin">Bienvenido a tu perfil</h1>
 				<div className="mt-3 px-5 mx-auto" style={{ background: 'white', left: '50%' }}>
 					<ActualizarUsuario
 						datosUser={datosUser}

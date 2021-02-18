@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import clienteAxios from '../../../config/axios';
 import { notification, Result, Row } from 'antd';
-import ComponenteProductos from '../Productos/componente_productos';
+import Card_Producto from '../Productos/Cards_Normales/card_producto';
 import Spin from '../../../components/Spin';
 
 function ResultadoBusqueda(props) {
@@ -15,7 +15,7 @@ function ResultadoBusqueda(props) {
 				setLoading(true);
 				await clienteAxios
 					.get(
-						`/productos/search?nombre=${url}&categoria=${url}&subcategoria=${url}&genero=${url}&color=${url}`
+						`/productos/search?nombre=${url}&categoria=${url}&subcategoria=${url}&genero=${url}&color=${url}&temporada=${url}`
 					)
 					.then((res) => {
 						setProductos(res.data.posts);
@@ -42,7 +42,7 @@ function ResultadoBusqueda(props) {
 		[ url ]
 	);
 
-	const render = productos.map((productos) => <ComponenteProductos key={productos._id} productos={productos} />);
+	const render = productos.map((productos) => <Card_Producto key={productos._id} productos={productos} />);
 
 	if (!productos) {
 		return (
@@ -54,7 +54,7 @@ function ResultadoBusqueda(props) {
 
 	return (
 		<Spin spinning={loading}>
-			<h3 className="ml-5 mt-4 mb-4">
+			<h3 className="ml-5 mt-4 mb-4 font-prin">
 				{productos.length} resultados de la busqueda "{url}"
 			</h3>
 			<div className="d-flex justify-content-center align-items-center">

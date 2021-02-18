@@ -14,6 +14,7 @@ import Carousel from '../pages/admin/Carousel/carousel'
 import Publicidad from '../pages/admin/Publicidad/publicidad'
 import BlogAdmin from '../pages/admin/Blog/blog'
 import Clientes from '../pages/admin/Clientes/clientes'
+import RegistroPublicidad from '../pages/admin/Publicidad/services/registro'
 
 //Users pages
 import Home from '../pages/users/home'
@@ -113,6 +114,11 @@ const routes = [
 				exact: true
 			},
 			{
+				path: '/admin/banner/:accion/:idBanner',
+				component: RegistroPublicidad,
+				exact: true
+			},
+			{
 				component: Error404
 			}
 		]
@@ -183,7 +189,7 @@ const routes = [
 				exact: true
 			},
 			{
-				path: '/politicas',
+				path: '/politicas/',
 				component: Politicas,
 				exact: true
 			},
@@ -219,6 +225,11 @@ const routes = [
 			},
 			{
 				path: '/categoria/:categoria/:subcategoria/:genero',
+				component: BusquedaCategorias,
+				exact: true
+			},
+			{
+				path: '/filtros/:temporada/:categoria/:subcategoria/:genero',
 				component: BusquedaCategorias,
 				exact: true
 			},

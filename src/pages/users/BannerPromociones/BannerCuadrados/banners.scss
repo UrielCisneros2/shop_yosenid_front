@@ -1,0 +1,44 @@
+.container-imagenes{
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-banner-doble{
+    height: 700px; 
+    width: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.imagen-doble{
+    max-width: 100%;
+    max-height: 100%;
+}
+.container-banner-triple{
+    height: 530px;
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.imagen-triple{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media(max-width: 768px){
+    .container-banner-doble{
+        height: 420px; 
+        // width: 350px;
+    }
+    .container-banner-triple{
+        height: 460px;
+        width: 280px;
+    }
+    .size-col{
+        min-width: 10px;
+    }
+}

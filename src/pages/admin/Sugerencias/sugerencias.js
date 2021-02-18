@@ -57,7 +57,7 @@ function Sugerencias(props) {
 			setLoading(true);
 			await clienteAxios
 				.get(
-					`/productos/search/admin?codigo=${busqueda}&nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}`
+					`/productos/search/admin?codigo=${busqueda}&nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}&temporada=${busqueda}`
 				)
 				.then((res) => {
 					setProductosPaginacion(res.data.posts);

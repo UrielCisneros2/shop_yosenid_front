@@ -19,18 +19,18 @@ function Entrar(props) {
 
     return(
         <div>
-            <p className="text-center mb-4 mt-4">
+            <p className="font-descrip text-center mb-4 mt-4">
                 Si aun no tienes cuenta regístrate dando click en <strong>Crear cuenta</strong>
             </p>
             <div className="tabs">
-                <Tabs centered className="shadow col-12 col-lg-4 bg-white rounded tabs-colors" defaultActiveKey="1">
+                <Tabs centered className=" shadow col-12 col-lg-4 bg-white rounded tabs-colors" defaultActiveKey="1">
                     <TabPane className="tab-color" tab="Iniciar Sesión" key="1">
                         <div className="mt-3">
                             <Login />
                         </div>
                         <Divider />
                         <div>
-                            <p >Accede con tu cuenta de Google o Facebook.</p>
+                            <p className="font-descrip">Accede con tu cuenta de Google o Facebook.</p>
                             <Firebase />
                         </div>
                     </TabPane>

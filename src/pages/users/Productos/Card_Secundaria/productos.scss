@@ -1,0 +1,192 @@
+// .principal-productos{
+//     color: rgb(255, 255, 255);
+//     text-align: center;
+//     background-color: rgb(255, 255, 255);
+//     padding: 15px;
+//     font-size: 25px;
+//     letter-spacing: 20px;
+//     font-weight: bold;
+//     width: 100%;
+// }
+.cont-div-card{
+    padding-bottom: 0px!important;
+    margin-bottom: 0px!important;
+}
+.card-div-sec{
+    padding-bottom: 0px!important;
+    margin-bottom: 0px!important;
+}
+.banner-producto{
+    max-width: 100%;
+}
+.titulo-producto{
+    height: 40px;
+    width: 100%!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.titulo-elipsis-sec{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* .descripcion-producto{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+
+.ant-col{
+    width: 300px;
+    margin-bottom: 0px!important;
+
+}
+.size-col{
+    padding-bottom: 0px!important;
+    padding-top: 25px;
+    min-width: 190px;
+}
+.contenedor-card-producto-secundario{
+    // border-right: 1px solid #e0e0e0;
+    height: 260px;
+    border-radius: 13px;
+    cursor: pointer;
+    padding-bottom: 0px!important;
+}
+.contenedor-imagen-oferta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-oferta{
+    top: 0;
+    left: 0;
+}
+// .contenedor-card-producto-secundario:hover .titulo-elipsis{
+//     height: 50px;
+//     transition-duration: .2s;
+//     transition-delay: .3s;
+    
+//     /* transition: ease-out .2s; */
+// }
+.contenedor-imagen-producto-secundario{
+    height: 180px; 
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-producto-principal{
+    max-width: 100%;
+    max-height: 100%;
+}
+.rebajado-sec{
+    color: green;
+    font-size: 13px;
+}
+.contenedor-oferta{
+    position: absolute;
+}
+.contenedor-oferta > h5{
+    background-color: rgb(255, 210, 62);
+    color: rgb(255, 0, 0);
+    width: 85px;
+    margin: 0;
+}
+.contenedor-oferta > p{
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(238, 155, 0);
+    width: 45px;
+}
+
+.contenedor-informacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.infor-center{
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor-titulos-productos-sec > h1 {
+    // margin-top: 10px;
+    padding-right: 7%;
+}
+
+.contenedor-precios-sec{
+    // padding: 9%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media(max-width: 768px){
+    .contenedor-precios-sec{
+        width: 135px;
+    }
+    .contenedor-imagen-producto-principal{
+        height: 20px; 
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .size-col{
+        min-width: 10px;
+    }
+    .titulo-producto{
+        height: 19px;
+        padding-left: 9%!important;
+        width: 100%!important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .contenedor-informacion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px!important;
+    }
+    .infor-center{
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-card-producto-secundario{
+        height: 275px;
+        border-radius: 13px;
+        cursor: pointer;
+        padding-bottom: 0px!important;
+    }
+}
+.card-precio-rebaja{
+    color: #33FF35;
+}
+.margen-dentro > .ant-card-body{
+    padding-left: 2%!important;
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.margen-precios{
+    padding-left: 6%!important;
+    padding-right: 0px!important;
+    padding-bottom: 0px!important;
+
+}
+.margen-precios-promo{
+    padding-left: 2%!important;
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.margen-b{
+    margin-bottom: 0px!important;
+}
+.margen-b > .ant-card-body{
+    padding-bottom: 0px!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+

@@ -43,18 +43,16 @@ function Inventario(props) {
 		props.history.push('/');
 	}
 
+	useEffect(() => {
+		obtenerCategorias();
+	}, []);
+
 	useEffect(
 		() => {
-			obtenerCategorias();
+			obtenerProductos(tipoCategoria, limite, page);
 		},
-		[]
+		[ page, reload, props ]
 	);
-	useEffect(() => {
-		/* effect */
-		return () => {
-			obtenerProductos(tipoCategoria, limite, page)
-		}
-	}, [page, reload, props])
 
 	/* useEffect(
 		() => {
@@ -71,9 +69,10 @@ function Inventario(props) {
 				}
 			})
 			.then((res) => {
-				if(res.data.length !== 0){
+				if (res.data.length !== 0) {
 					setCategorias(res.data);
-					/* obtenerProductos(res.data[0]._id, limite, page);  */ 
+					/* obtenerProductos(res.data[0]._id, limite, page);  */
+
 					/* setTipoCategoria(res.data[0]._id); */
 					props.history.push(`/admin/inventario/${res.data[0]._id}`);
 				}
@@ -91,7 +90,7 @@ function Inventario(props) {
 			setLoading(true);
 			await clienteAxios
 				.get(
-					`/productos/search/admin?codigo=${busqueda}&nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}`
+					`/productos/search/admin?codigo=${busqueda}&nombre=${busqueda}&categoria=${busqueda}&subcategoria=${busqueda}&genero=${busqueda}&color=${busqueda}&temporada=${busqueda}`
 				)
 				.then((res) => {
 					const otros = res.data.posts.filter((element) => element.tipoCategoria === tipoCategoria);
@@ -188,7 +187,7 @@ function Inventario(props) {
 				</TabPane>
 			);
 		}
-		return (<div/>)
+		return <div />;
 	});
 
 	const searchBar = (
@@ -224,7 +223,7 @@ function Inventario(props) {
 				tabBarExtraContent={searchBar}
 				onChange={(tipoCategoria) => {
 					/* obtenerProductos(tipoCategoria, limite, page); */
-					props.history.push(`/admin/inventario/${tipoCategoria}`)
+					props.history.push(`/admin/inventario/${tipoCategoria}`);
 				}}
 			>
 				{tabs}

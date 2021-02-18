@@ -45,23 +45,25 @@ function Scroll(props) {
 					>
 						{!productos.promocion.length ? (
 							<div className="contenedor-titulos-productos">
-								<h1 className="titulo-producto">{productos.nombre}</h1>
-								<h2 className="h5 precio-rebaja">${formatoMexico(productos.precio)}</h2>
+								<h1 className="font-secun">{productos.nombre}</h1>
+								<h2 className="font-prin precio-rebaja">${formatoMexico(productos.precio)}</h2>
 							</div>
 						) : (
 							productos.promocion.map((promo) => {
 								return (
 									<div className="contenedor-titulos-productos" key={promo._id}>
-										<h1 className="titulo-producto">{productos.nombre}</h1>
-										<h2 className="h5 precio-producto d-inline mr-2">
-											${formatoMexico(productos.precio)}
-										</h2>
-										<h2 className="h5 precio-rebaja d-inline mr-2">
-											${formatoMexico(promo.precioPromocion)}
-										</h2>
-										<p className="h4 porcentaje-descuento d-inline mr-2">
+										<h1 className="font-secun">{productos.nombre}</h1>
+										<p className="font-peque porcentaje-descuento d-inline">
 											{agregarPorcentaje(promo.precioPromocion, productos.precio)}%OFF
 										</p>
+										<h2 className="font-peque precio-producto d-inline mr-1">
+											${formatoMexico(productos.precio)}
+										</h2>
+										<br/>
+										<h2 className="font-prin precio-rebaja d-inline mr-1">
+											${formatoMexico(promo.precioPromocion)}
+										</h2>
+										
 									</div>
 								);
 							})
@@ -74,7 +76,7 @@ function Scroll(props) {
 	return (
 		<Spin spinning={loading}>
 			<div className="mt-5">
-				<p className="titulos-vista-productos producto-descripcion mb-3">Quienes vieron este producto también compraron</p>
+				<p className="font-prin titulos-vista-productos producto-descripcion mb-3">Quienes vieron este producto también compraron</p>
 				<div className="contenedor-scroller">
 					{render}
 				</div>

@@ -34,7 +34,7 @@ const InfoTienda = (props) => {
 	return (
 		<Spin spinning={loading}>
 			<div className="contenedor-info-tienda">
-				<p className="titulos-vista-productos text-center">Encuentra nuestra tienda</p>
+				<p className="titulos-vista-productos text-center font-secun">Encuentra nuestra tienda</p>
 				<div className="text-center">
 					<div className="contenedor-imagen-info">
 						<div className="contenedor-imagen-info-tienda">
@@ -47,7 +47,7 @@ const InfoTienda = (props) => {
 					</div>
 					{/* <Avatar size={64} src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${tienda.imagenLogo}`} /> */}
 					<div className="text-center">
-						<p className="font-weight-bold" style={{ fontSize: 20 }}>
+						<p className="font-weight-bold font-prin" >
 							{tienda.nombre}
 						</p>
 					</div>
@@ -56,11 +56,11 @@ const InfoTienda = (props) => {
 					tienda.direccion.map((direccion) => {
 						return (
 							<div key={direccion._id} className="container">
-								<p className="direccion-tienda-vista-producto">
+								<p className="font-descrip">
 									<span className="font-weight-bold">Dirección:</span> {direccion.calle_numero}, Col.{' '}
 									{direccion.colonia}, {direccion.ciudad}, {direccion.cp}
 								</p>
-								<p className="direccion-tienda-vista-producto">
+								<p className="font-descrip">
 									<span className="font-weight-bold">Teléfono:</span> {tienda.telefono}
 								</p>
 							</div>
@@ -69,7 +69,18 @@ const InfoTienda = (props) => {
 				) : (
 					<p />
 				)}
-				{tienda.length !== 0 ? (
+				{tienda.diasHorariosEmpresas !== '' && tienda.diasHorariosEmpresas !== "undefined" ? (
+					<div className="container">
+						<p className="font-descrip">
+							<span className="font-weight-bold">Horarios de Atención:</span>
+							<p dangerouslySetInnerHTML={{__html: tienda.diasHorariosEmpresas}}/>
+						</p>
+					</div>
+				) : (
+					<p />
+				)}
+
+				{/* {tienda.length !== 0 ? (
 					tienda.ubicacion.map((ubicacion) => {
 						return (
 							<div key={ubicacion._id}>
@@ -89,7 +100,7 @@ const InfoTienda = (props) => {
 					})
 				) : (
 					<p />
-				)}
+				)} */}
 			</div>
 		</Spin>
 	);

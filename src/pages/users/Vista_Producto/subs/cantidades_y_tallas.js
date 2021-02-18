@@ -431,11 +431,11 @@ function TallasCantidades(props) {
 			<div className="contenedor-p-seleccion-compra">
 				<div className="contenedor-p-seleccion-compra mb-4">
 					{disabled ? (
-						<p className="disponibilidad-p mb-3">En este momento no hay articulos disponibles</p>
+						<p className="font-vista-prod disponibilidad-p mb-3">En este momento no hay articulos disponibles</p>
 					) : (
-						<p className="disponibilidad-p-disponible mb-3">¡Articulos disponibles!</p>
+						<p className="font-vista-prod mb-3">¡Articulos disponibles!</p>
 					)}
-					{categoria !== 'otros' ? <p className="mb-3 font-weight-bold">Tallas:</p> : <p />}
+					{categoria !== 'otros' ? <p className="mb-3 font-vista-prod font-weight-bold">Tallas:</p> : <p />}
 					<div>{render}</div>
 				</div>
 
@@ -444,12 +444,13 @@ function TallasCantidades(props) {
 						<Form.Item
 							name="cantidad"
 							label="Cantidad"
+							className="font-vista-prod"
 							validateStatus={validateStatus}
 							help={
 								categoria === 'ropa' && tallas.length !== 0 ? (
-									<p>Solo hay {tallas.cantidad} disponibles</p>
+									<p className="font-vista-prod">Solo hay {tallas.cantidad} disponibles</p>
 								) : categoria === 'calzado' && numeros.length !== 0 ? (
-									<p>Solo hay {numeros.cantidad} disponibles</p>
+									<p className="font-vista-prod">Solo hay {numeros.cantidad} disponibles</p>
 								) : (
 									<p>Elige una talla</p>
 								)
@@ -468,6 +469,7 @@ function TallasCantidades(props) {
 						</Form.Item>
 					) : (
 						<Form.Item
+							className="font-vista-prod"
 							label="Cantidad"
 							validateStatus={validateStatus}
 							help={<p>Solo hay {productos.cantidad} disponibles</p>}
@@ -487,6 +489,7 @@ function TallasCantidades(props) {
 				<Divider />
 				{decoded && decoded.rol === true ? (
 					<Alert
+						className="font-peque"
 						description="Como Administrador tienes desabilitadas las opciones de comprar, apartar y agregar al carrito"
 						type="info"
 						showIcon
@@ -494,8 +497,8 @@ function TallasCantidades(props) {
 				) : (
 					<div className="contenedor-button-vista">
 						<div>
-							{<Button
-								className=" size-button-vista color-boton color-font-boton d-none"
+							<Button
+								className="d-block size-button-vista color-boton font-vista-prod"
 								//type="primary"
 								size="large"
 								onClick={() => Pedido()}
@@ -503,9 +506,9 @@ function TallasCantidades(props) {
 							>
 								<TagsOutlined style={{ fontSize: 20 }} />
 								Comprar ahora
-							</Button>}
+							</Button>
 							<Button
-								className="mt-3 d-block size-button-vista color-boton-sec color-font-boton"
+								className="mt-3 d-block size-button-vista color-boton-sec font-vista-prod"
 								size="large"
 								onClick={() => showModal()}
 								disabled={disabled}
@@ -514,7 +517,7 @@ function TallasCantidades(props) {
 								Apartar
 							</Button>
 							<Button
-								className="mt-3 d-block size-button-vista color-boton-sec color-font-boton"
+								className="mt-3 d-block size-button-vista color-boton-sec font-vista-prod"
 								size="large"
 								disabled={disabled}
 								onClick={() => Carrito()}
@@ -545,18 +548,18 @@ function TallasCantidades(props) {
 							<Avatar size={64} src={aws + productos.imagen} />
 						</div>
 						<div className="col-lg-10">
-							<h5>{productos.nombre}</h5>
+							<h5 className="font-secun" >{productos.nombre}</h5>
 							<div className="row">
 								<div className="col-lg-3">
-									<h6>Cantidad: {cantidadFinal}</h6>
+									<h6 className="font-vista-prod">Cantidad: {cantidadFinal}</h6>
 								</div>
 								{numeros.length !== 0 ? (
 									<div className="col-lg-3">
-										<h6>Talla: {numeros.numero}</h6>
+										<h6 className="font-vista-prod">Talla: {numeros.numero}</h6>
 									</div>
 								) : tallas.length !== 0 ? (
 									<div className="col-lg-3">
-										<h6>Talla: {tallas.talla}</h6>
+										<h6 className="font-vista-prod">Talla: {tallas.talla}</h6>
 									</div>
 								) : (
 									<div className="d-none" />
@@ -585,7 +588,7 @@ function TallasCantidades(props) {
 				</div>
 				<div className="row mt-4">
 					<div className="col-lg-6 text-center">
-						<h6 className="font-weight-bold">Elegir tipo de envío: </h6>
+						<h6 className="font-vista-prod font-weight-bold">Elegir tipo de envío: </h6>
 						<div>
 							<Select style={{ width: 200 }} placeholder="Selecciona un tipo" onChange={obtenerTipoEnvio}>
 								<Option value="ENVIO">Envío por paquetería</Option>
@@ -597,7 +600,7 @@ function TallasCantidades(props) {
 						<Alert description="Para apartar un producto completa tus datos." type="info" showIcon />
 					</div>
 				</div>
-				<Divider>Tus datos</Divider>
+				<Divider  className="font-vista-prod">Tus datos</Divider>
 				{decoded && decoded._id ? (
 					<DatosCliente
 						token={token}

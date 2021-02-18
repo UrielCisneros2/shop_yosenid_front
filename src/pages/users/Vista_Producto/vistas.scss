@@ -3,23 +3,19 @@
 }
 .titulo-principal{
     margin-top: 10px;
-    font-size: 22px;
-    font-weight: bold;
-}
-.titulos-vista-productos{
-    font-size: 26px;
+    // font-size: 22px;
     font-weight: bold;
 }
 .titulo-precio{
-    font-size: 28px;
+    // font-size: 28px;
     display: inline;
 }
-.titulo-porcentaje{
-    font-size: 18px!important;
-}
-.titulo-porcentaje-sugerencia{
-    font-size: 18px!important;
-}
+// .titulo-porcentaje{
+//     font-size: 18px!important;
+// }
+// .titulo-porcentaje-sugerencia{
+//     font-size: 18px!important;
+// }
 .talla-vista-producto{
     margin: 3px;
 }
@@ -28,12 +24,12 @@
 }
 .read-more{
     height: auto;
-    font-size: 16px;
+    // font-size: 16px;
     padding: 20px;
 }
 .read-less{
     padding: 20px;
-    font-size: 16px;
+    // font-size: 16px;
     max-height: 250px;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -43,15 +39,15 @@
     cursor: pointer;
 }
 .disponibilidad-p{
-    font-size: 18px;
+    // font-size: 18px;
     color: rgba(255, 0, 0, 0.507);
 }
-.disponibilidad-p-disponible{
-    font-size: 18px;
-}
-.contenedor-p-seleccion-compra > p {
-    font-size: 18px;
-}
+// .disponibilidad-p-disponible{
+//     font-size: 18px;
+// }
+// .contenedor-p-seleccion-compra > p {
+//     font-size: 18px;
+// }
 .disponibilidad{
     color: rgba(255, 0, 0, 0.507);
 }
@@ -84,7 +80,7 @@
     align-items: center;
 }
 .producto-descripcion{
-    font-size: 26px;
+    // font-size: 26px;
     color: #000;
 }
 @media(max-width: 768px){
@@ -96,6 +92,7 @@
     }
     .contenedor-button-vista{
         display: flex;
+        
         justify-content: center;
     }
     .size-button-vista{

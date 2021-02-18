@@ -5,7 +5,7 @@ import Pagination from '../../../components/Pagination/pagination';
 import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
 import './ofertas.scss';
-import ComponenteProductos from '../Productos/componente_productos';
+import Card_Producto from '../Productos/Cards_Normales/card_producto'
 import Spin from '../../../components/Spin';
 
 function Ofertas(props) {
@@ -39,7 +39,7 @@ function Ofertas(props) {
 	}
 
 	const render = productos.map((productos) => (
-		<ComponenteProductos key={productos._id} productos={productos} />
+		< Card_Producto key={productos._id} productos={productos} />
 	));
 
 	if (!productos) {
@@ -54,7 +54,7 @@ function Ofertas(props) {
 		<Spin spinning={loading}>
 			<div className="contenedor-home-background">
 				<div className="row contenedor-home-banner">
-					<h4 className="mb-0 text-center">¡Encuentra ofertas todos los días!</h4>
+					<p className="font-prin mb-0 text-center">¡Encuentra ofertas todos los días!</p>
 				</div>
 			</div>
 			<div className="d-flex justify-content-center align-items-center">

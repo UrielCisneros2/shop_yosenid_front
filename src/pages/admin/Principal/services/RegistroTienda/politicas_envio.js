@@ -6,10 +6,11 @@ import jwt_decode from 'jwt-decode';
 
 export default function PoliticasEnvio(props) {
 	const {setCurrent, current} = props;
-	// const {drawnerClose} = props;
 	const {next} = props;
 
-	const { datosNegocio, setReloadInfo } = props;
+	const [datosNegocio, setDatosNegocio] = useState({});
+	const [ reloadInfo, setReloadInfo ] = useState(false);
+
 	const [ disabled, setDisabled ] = useState(false);
 	const [ datos, setDatos ] = useState({});
 	const [ control, setControl ] = useState(false);
@@ -18,6 +19,41 @@ export default function PoliticasEnvio(props) {
 	const [ loading, setLoading ] = useState(false);
 	const token = localStorage.getItem('token');
 	var decoded = Jwt(token);
+
+	function peticionDatosTienda() {
+		setLoading(true);
+		clienteAxios
+			.get(`/tienda/`)
+			.then((res) => {
+				setLoading(false);
+				setDatosNegocio(res.data[0]);
+			})
+			.catch((err) => {
+				setLoading(false);
+				setDatosNegocio({});
+				if (err.response) {
+					notification.error({
+						message: 'Error',
+						description: err.response.data.message,
+						duration: 2
+					});
+				} else {
+					notification.error({
+						message: 'Error de conexion',
+						description: 'Al parecer no se a podido conectar al servidor.',
+						duration: 2
+					});
+				}
+			});
+	}
+
+	useEffect(
+		() => {
+			peticionDatosTienda();
+			setReloadInfo(false);
+		},
+		[ reloadInfo ]
+	);
 
 	function Jwt(token) {
 		try {
@@ -48,6 +84,7 @@ export default function PoliticasEnvio(props) {
 			})
 			.then((res) => {
 				setLoading(false);
+
 				if (!res.data) {
 					setControl(false);
 				} else {
@@ -189,7 +226,7 @@ export default function PoliticasEnvio(props) {
 			) : (
 				<div />
 			)}
-			<Form onFinish={SendForm} form={form} /* setCurrent={setCurrent} current={current} */ className="mt-5">
+			<Form onFinish={SendForm} form={form} className="mt-5">
 				<Form.Item
 					className="m-2"
 					label="Costo de envío"

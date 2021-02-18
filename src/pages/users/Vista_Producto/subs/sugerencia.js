@@ -251,13 +251,14 @@ const Sugerencia = (props) => {
 			}
 		}
 	}
-
 	return (
 		<Spin spinning={loading}>
 			<div>
 				{
-					dataEstados.todos !== true || dataEstados !== false ? (
-						<Estados_disponibles />
+					dataEstados.todos !== true ? (
+						<div>
+							<Estados_disponibles />
+						</div>
 					):(
 						null
 					)
@@ -268,7 +269,7 @@ const Sugerencia = (props) => {
 					<div />
 				) : (
 					<div className="col-lg-12">
-						<p className="my-3 text-center titulos-vista-productos producto-descripcion">
+						<p className="my-3 text-center producto-descripcion font-prin">
 							¡Llévalos juntos!
 						</p>
 						<div className="row" style={{ justifyContent: 'center' }}>
@@ -343,9 +344,9 @@ const Sugerencia = (props) => {
 															help={
 																producto.tipoCategoria !== 'Otros' &&
 																medida.length !== 0 ? (
-																	<p>Solo hay {medida[1]} disponibles</p>
+																	<p className="font-peque">Solo hay {medida[1]} disponibles</p>
 																) : (
-																	<p>Cantidad</p>
+																	<p className="font-descrip">Cantidad</p>
 																)
 															}
 														>
@@ -363,7 +364,7 @@ const Sugerencia = (props) => {
 													) : (
 														<Form.Item
 															validateStatus={validateStatus}
-															help={<p>Solo hay {producto.cantidad} disponibles</p>}
+															help={<p className="font-peque" >Solo hay {producto.cantidad} disponibles</p>}
 														>
 															<InputNumber
 																type="number"
@@ -387,22 +388,21 @@ const Sugerencia = (props) => {
 											description={
 												<div>
 													{productoPromocion.length === 0 ? (
-														<p className="titulo-precio-tachado precio-rebaja titulo-precio">
+														<p className="font-prin titulo-precio-tachado precio-rebaja titulo-precio">
 															$ {formatoMexico(producto.precio)}
 														</p>
 													) : (
 														<div>
-															<p className="titulo-precio-tachado precio-producto">
+															<p className=" font-peque titulo-precio-tachado precio-producto">
 																$ {formatoMexico(producto.precio)}
 															</p>
 															<p
-																className="titulo-precio precio-rebaja mr-2"
-																style={{ fontSize: 18 }}
+																className="font-descrip titulo-precio precio-rebaja mr-2"
 															>
 																$ {formatoMexico(productoPromocion.precioPromocion)}
 															</p>
 															<p
-																className="titulo-porcentaje-sugerencia porcentaje-descuento d-inline"
+																className="font-peque titulo-porcentaje-sugerencia porcentaje-descuento d-inline"
 																style={{ fontSize: 18 }}
 															>
 																{agregarPorcentaje(
@@ -491,9 +491,9 @@ const Sugerencia = (props) => {
 															help={
 																sugerencia.tipoCategoria !== 'Otros' &&
 																medidaSugerencia.length !== 0 ? (
-																	<p>Solo hay {medidaSugerencia[1]} disponibles</p>
+																	<p className="font-peque">Solo hay {medidaSugerencia[1]} disponibles</p>
 																) : (
-																	<p>Cantidad</p>
+																	<p className="font-descrip">Cantidad</p>
 																)
 															}
 														>
@@ -511,7 +511,7 @@ const Sugerencia = (props) => {
 													) : (
 														<Form.Item
 															validateStatus={validateStatus}
-															help={<p>Solo hay {sugerencia.cantidad} disponibles</p>}
+															help={<p className="font-peque">Solo hay {sugerencia.cantidad} disponibles</p>}
 														>
 															<InputNumber
 																type="number"
@@ -534,33 +534,32 @@ const Sugerencia = (props) => {
 											title={sugerencia.nombre}
 											description={
 												<div>
-													{sugerenciaPromocion.length === 0 ? (
-														<p className="titulo-precio-tachado precio-rebaja titulo-precio">
-															$ {formatoMexico(sugerencia.precio)}
+													{productoPromocion.length === 0 ? (
+														<p className="font-prin titulo-precio-tachado precio-rebaja titulo-precio">
+															$ {formatoMexico(producto.precio)}
 														</p>
 													) : (
 														<div>
-															<p className="titulo-precio-tachado precio-producto">
-																$ {formatoMexico(sugerencia.precio)}
+															<p className=" font-peque titulo-precio-tachado precio-producto">
+																$ {formatoMexico(producto.precio)}
 															</p>
 															<p
-																className="titulo-precio precio-rebaja mr-2"
-																style={{ fontSize: 18 }}
+																className="font-descrip titulo-precio precio-rebaja mr-2"
 															>
-																$ {formatoMexico(sugerenciaPromocion.precioPromocion)}
+																$ {formatoMexico(productoPromocion.precioPromocion)}
 															</p>
 															<p
-																className="titulo-porcentaje-sugerencia porcentaje-descuento d-inline"
+																className="font-peque titulo-porcentaje-sugerencia porcentaje-descuento d-inline"
 																style={{ fontSize: 18 }}
 															>
 																{agregarPorcentaje(
-																	sugerenciaPromocion.precioPromocion,
-																	sugerencia.precio
+																	productoPromocion.precioPromocion,
+																	producto.precio
 																)}% OFF
 															</p>
 														</div>
 													)}
-													<h6 className="disponibilidad">{disponibilidadSugerencia}</h6>
+													<h6 className="disponibilidad">{disponibilidad}</h6>
 												</div>
 											}
 										/>
@@ -569,7 +568,7 @@ const Sugerencia = (props) => {
 							</div>
 							<div className="mt-3">
 								<div className="d-block">
-									<p className="titulos-vista-productos producto-descripcion">
+									<p className="producto-descripcion font-prin">
 										Precio total: ${formatoMexico(total.toFixed(2))}
 									</p>
 								</div>

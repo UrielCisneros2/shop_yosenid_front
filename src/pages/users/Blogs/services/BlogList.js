@@ -45,7 +45,7 @@ export default function BlogList(props) {
 	return (
 		<Spin size="large" spinning={loading}>
 			<div id="blog" className="container">
-				<h1 className="text-center p-3">Nuestro Blog!</h1>
+				<p className="font-prin text-center p-3">¡Nuestro Blog!</p>
 				<div className="container-fluid bg-white shadow-lg">
 					<div id="cards">
 						<BlogsList2 blogs={blogs} setLoading={setLoading} />

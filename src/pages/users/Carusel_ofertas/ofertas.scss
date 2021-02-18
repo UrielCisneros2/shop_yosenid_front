@@ -1,7 +1,7 @@
 /* For demo */
 .banner-user{
-  height: 330px;
-  width: 100%;
+  height: 580px;
+  width: 100%!important;
 }
 
 /* .banner-user-elem{
@@ -30,4 +30,8 @@
   .banner-user{
     height: 100px!important;
   }
+}
+
+.search-nav .ant-input-wrapper{
+  border-radius: 150px;
 }

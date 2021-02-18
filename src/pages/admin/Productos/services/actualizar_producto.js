@@ -46,6 +46,8 @@ function ActualizarProducto(props) {
 	/* const [ buttonCat, setButtonCat ] = useState(true); */
 	const [ categoriasBD, setCategoriasBD ] = useState([]);
 
+	const [ temporadasBD, setTemporadasBD ] = useState([]);
+
 	const [ productos, setProductos ] = useState([
 		{
 			codigo: '',
@@ -126,48 +128,53 @@ function ActualizarProducto(props) {
 		}
 	};
 
-	const obtenerDatos = useCallback(async () => {
-		setLoading(true);
-		await clienteAxios
-			.get(`/productos/${productoID}`)
-			.then((res) => {
-				setLoading(false);
-				form.setFieldsValue({
-					codigo: res.data.codigo,
-					nombre: res.data.nombre,
-					categoria: res.data.categoria,
-					subCategoria: res.data.subCategoria,
-					genero: res.data.genero,
-					precio: res.data.precio,
-					color: res.data.color,
-					cantidad: res.data.cantidad,
-					descripcion: res.data.descripcion
+	const obtenerDatos = useCallback(
+		async () => {
+			setLoading(true);
+			await clienteAxios
+				.get(`/productos/${productoID}`)
+				.then((res) => {
+					setLoading(false);
+					form.setFieldsValue({
+						codigo: res.data.codigo,
+						nombre: res.data.nombre,
+						categoria: res.data.categoria,
+						subCategoria: res.data.subCategoria,
+						temporada: res.data.temporada ? res.data.temporada : '',
+						genero: res.data.genero,
+						precio: res.data.precio,
+						color: res.data.color,
+						cantidad: res.data.cantidad,
+						descripcion: res.data.descripcion
+					});
+					setSelect(res.data.categoria);
+					setEditor(res.data.descripcion);
+					setFiles(res.data.imagen);
+					setProductos(res.data);
+					setColor(res.data.colorHex);
+					setGenero(res.data.genero);
+					setSubCategoria(res.data.subCategoria);
+					setTemporada(res.data.temporada ? res.data.temporada : '');
+				})
+				.catch((err) => {
+					setLoading(false);
+					if (err.response) {
+						notification.error({
+							message: 'Error',
+							description: err.response.data.message,
+							duration: 2
+						});
+					} else {
+						notification.error({
+							message: 'Error de conexion',
+							description: 'Al parecer no se a podido conectar al servidor.',
+							duration: 2
+						});
+					}
 				});
-				setSelect(res.data.categoria);
-				setEditor(res.data.descripcion);
-				setFiles(res.data.imagen);
-				setProductos(res.data);
-				setColor(res.data.colorHex);
-				setGenero(res.data.genero);
-				setSubCategoria(res.data.subCategoria);
-			})
-			.catch((err) => {
-				setLoading(false);
-				if (err.response) {
-					notification.error({
-						message: 'Error',
-						description: err.response.data.message,
-						duration: 2
-					});
-				} else {
-					notification.error({
-						message: 'Error de conexion',
-						description: 'Al parecer no se a podido conectar al servidor.',
-						duration: 2
-					});
-				}
-			});
-	}, [ form, productoID]);
+		},
+		[ form, productoID ]
+	);
 
 	const generoOnChange = (value) => {
 		setGenero(value);
@@ -230,12 +237,36 @@ function ActualizarProducto(props) {
 	};
 	const onSubCategoriaChange = (e) => {
 		if (e.target.value.length !== 0) {
-			setItem(e.target.value);
+			setItem(e.target.value.capitalize());
 			setSubCategoria(e.target.value);
 			setButtonCat(false);
 		} else {
 			setButtonCat(true);
 		}
+	};
+
+	/* temporadas */
+	const [ temporada, setTemporada ] = useState();
+	const [ valueSelectTemporada, setValueSelectTemporada ] = useState();
+	const [ temporadaDefault, setTemporadaDefault ] = useState([]);
+
+	const onSelectTemporada = (value) => {
+		setTemporada(value);
+	};
+	const onTemporadaChange = (e) => {
+		if (e.target.value.length !== 0) {
+			setItem(e.target.value.capitalize());
+			setTemporada(e.target.value);
+			setButtonCat(false);
+		} else {
+			setButtonCat(true);
+		}
+	};
+	const addItemTemporada = () => {
+		setTemporadaDefault([ ...temporadaDefault, item ]);
+		form.setFieldsValue({ temporada: item });
+		setTemporada(item);
+		setValueSelectTemporada(item);
 	};
 
 	async function obtenerCategorias() {
@@ -298,6 +329,32 @@ function ActualizarProducto(props) {
 			});
 	}
 
+	async function obtenerTemporadasBD() {
+		setLoadingCombo(true);
+		await clienteAxios
+			.get(`/productos/agrupar/temporadas`)
+			.then((res) => {
+				setLoadingCombo(false);
+				setTemporadasBD(res.data);
+			})
+			.catch((err) => {
+				setLoadingCombo(false);
+				if (err.response) {
+					notification.error({
+						message: 'Error',
+						description: err.response.data.message,
+						duration: 2
+					});
+				} else {
+					notification.error({
+						message: 'Error de conexion',
+						description: 'Al parecer no se a podido conectar al servidor.',
+						duration: 2
+					});
+				}
+			});
+	}
+
 	const onError = (error) => {
 		error.errorFields.forEach((err) => {
 			notification.error({
@@ -315,6 +372,7 @@ function ActualizarProducto(props) {
 			formData.append('nombre', productos.nombre);
 			formData.append('categoria', select);
 			formData.append('subCategoria', subCategoria);
+			formData.append('temporada', temporada);
 			formData.append('genero', genero);
 			formData.append('color', productos.color);
 			formData.append('colorHex', color);
@@ -327,6 +385,7 @@ function ActualizarProducto(props) {
 			formData.append('nombre', productos.nombre);
 			formData.append('categoria', select);
 			formData.append('subCategoria', subCategoria);
+			formData.append('temporada', temporada);
 			formData.append('genero', genero);
 			formData.append('color', productos.color);
 			formData.append('colorHex', color);
@@ -386,6 +445,7 @@ function ActualizarProducto(props) {
 			obtenerDatos();
 			obtenerSubcategorias();
 			obtenerCategorias();
+			obtenerTemporadasBD();
 		},
 		[ productoID, reload, form, obtenerDatos ]
 	);
@@ -400,12 +460,12 @@ function ActualizarProducto(props) {
 		<Tabs defaultActiveKey="1">
 			<TabPane tab="Actualizar datos del producto" key="1">
 				<Spin size="large" spinning={loading}>
-					{productos.categoria === 'Ropa' ? (
+					{productos.tipoCategoria === 'Ropa' ? (
 						<div className="d-flex justify-content-center">{<ActualizarTalla />}</div>
 					) : (
 						<div />
 					)}
-					{productos.categoria === 'Calzado' ? <div>{<ActualizarNumero />}</div> : <div />}
+					{productos.tipoCategoria === 'Calzado' ? <div>{<ActualizarNumero />}</div> : <div />}
 					<Form {...layout} name="nest-messages" onFinish={subirDatos} onFinishFailed={onError} form={form}>
 						<Form.Item name="codigo" label="Código de barras" onChange={obtenerValores}>
 							<Input name="codigo" placeholder="Campo opcional" />
@@ -419,47 +479,43 @@ function ActualizarProducto(props) {
 								<Input name="nombre" />
 							</Form.Item>
 						</Form.Item>
-						{productos.tipoCategoria === 'Otros' ? (
-							<Form.Item label="Categoria" onChange={obtenerValores}>
-								<Form.Item name="categoria">
-									<Select
-										disabled={loadingCombo}
-										loading={loadingCombo}
-										value={valueSelectCat}
-										style={{ width: 300 }}
-										placeholder="Seleciona una categoria"
-										onChange={onSelect}
-										dropdownRender={(menu) => (
-											<div>
-												{menu}
-												<Divider style={{ margin: '4px 0' }} />
-												<div style={{ display: 'flex', flexWrap: 'nowrap', padding: 8 }}>
-													<Input style={{ flex: 'auto' }} onChange={onCategoriaChange} />
-													<Button disabled={buttonCat} onClick={addItemCategoria}>
-														<PlusOutlined style={{ fontSize: 20 }} /> Nueva
-													</Button>
-												</div>
+						<Form.Item label="Categoria" onChange={obtenerValores}>
+							<Form.Item name="categoria">
+								<Select
+									disabled={loadingCombo}
+									loading={loadingCombo}
+									value={valueSelectCat}
+									style={{ width: 300 }}
+									placeholder="Seleciona una categoria"
+									onChange={onSelect}
+									dropdownRender={(menu) => (
+										<div>
+											{menu}
+											<Divider style={{ margin: '4px 0' }} />
+											<div style={{ display: 'flex', flexWrap: 'nowrap', padding: 8 }}>
+												<Input style={{ flex: 'auto' }} onChange={onCategoriaChange} />
+												<Button disabled={buttonCat} onClick={addItemCategoria}>
+													<PlusOutlined style={{ fontSize: 20 }} /> Nueva
+												</Button>
 											</div>
-										)}
-									>
-										{categoriasDefault.map((item) => <Option key={item}>{item}</Option>)}
-										{categoriasBD.length === 0 ? (
-											<Option />
-										) : (
-											categoriasBD.map((item) => {
-												if (item._id === 'Ropa' || item._id === 'Calzado') {
-													return null;
-												} else {
-													return <Option key={item._id}>{item._id}</Option>;
-												}
-											})
-										)}
-									</Select>
-								</Form.Item>
+										</div>
+									)}
+								>
+									{categoriasDefault.map((item) => <Option key={item}>{item}</Option>)}
+									{categoriasBD.length === 0 ? (
+										<Option />
+									) : (
+										categoriasBD.map((item) => {
+											if (item._id === 'Ropa' || item._id === 'Calzado') {
+												return null;
+											} else {
+												return <Option key={item._id}>{item._id}</Option>;
+											}
+										})
+									)}
+								</Select>
 							</Form.Item>
-						) : (
-							<Form.Item className="d-none" />
-						)}
+						</Form.Item>
 						<Form.Item label="Subcategoria" name="categoria" onChange={obtenerValores}>
 							<Form.Item
 								name="subCategoria"
@@ -489,6 +545,41 @@ function ActualizarProducto(props) {
 										<Option />
 									) : (
 										subCategoriasBD.map((item) => {
+											if (item._id === null) {
+												return null;
+											} else {
+												return <Option key={item._id}>{item._id}</Option>;
+											}
+										})
+									)}
+								</Select>
+							</Form.Item>
+						</Form.Item>
+						<Form.Item label="Temporada" name="temporada" onChange={obtenerValores}>
+							<Form.Item name="temporada">
+								<Select
+									style={{ width: 300 }}
+									placeholder="Seleciona una temporada"
+									value={valueSelectTemporada}
+									onChange={onSelectTemporada}
+									dropdownRender={(menu) => (
+										<div>
+											{menu}
+											<Divider style={{ margin: '4px 0' }} />
+											<div style={{ display: 'flex', flexWrap: 'nowrap', padding: 8 }}>
+												<Input style={{ flex: 'auto' }} onChange={onTemporadaChange} />
+												<Button disabled={buttonCat} onClick={addItemTemporada}>
+													<PlusOutlined style={{ fontSize: 20 }} /> Nueva
+												</Button>
+											</div>
+										</div>
+									)}
+								>
+									{temporadaDefault.map((item) => <Option key={item}>{item}</Option>)}
+									{temporadasBD.length === 0 ? (
+										<Option />
+									) : (
+										temporadasBD.map((item) => {
 											if (item._id === null) {
 												return null;
 											} else {

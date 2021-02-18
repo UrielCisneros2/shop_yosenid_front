@@ -98,7 +98,7 @@ function Login(props) {
 
 	return (
 		<div className="col-12">
-			<Form {...layout} name="basic" initialValues={{ remember: true }} onFinish={onFinish}>
+			<Form {...layout} name="basic" className="font-descrip" initialValues={{ remember: true }} onFinish={onFinish}>
 				<Form.Item label="Correo" >
 					<Form.Item name="email" rules={[ { required: true, message: 'El email es obligatorio!' } ]} noStyle >
 						<Input />

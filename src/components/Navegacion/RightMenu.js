@@ -25,7 +25,7 @@ function RightMenu(props) {
 	}
 
 	return (
-		<Menu defaultSelectedKeys={[ window.location.pathname ]} className="navbar-menu-general">
+		<Menu defaultSelectedKeys={[ window.location.pathname ]} className="navbar-menu-general font-foot">
 			<Menu.Item key="/" className="navbar-menu-general nav-font-color">
 				Inicio<Link to="/" />
 			</Menu.Item>

@@ -31,14 +31,15 @@ function MostrarRegistroTienda(props) {
 	const [ reloadInfo, setReloadInfo ] = useState(false);
 	const [ politicasEnvio, setPoliticasEnvio ] = useState([]);
 
-	const [ lat, setLat ] = useState('');
-	const [ lng, setLng ] = useState('');
+	// const [ lat, setLat ] = useState('');
+	// const [ lng, setLng ] = useState('');
 
 	const showDrawer = () => {
 		setVisible(true);
 	};
 	const drawnerClose = () => {
 		setVisible(false);
+		setReloadInfo(!reloadInfo)
 	};
 
 	const [ current, setCurrent ] = useState(0);
@@ -60,16 +61,16 @@ function MostrarRegistroTienda(props) {
 				setDatosNegocio(res.data[0]);
 				if (res.data[0]) {
 					setAction(true);
-					if (res.data[0].ubicacion[0].lat === '' || res.data[0].ubicacion[0].lat === 'undefined') {
-						setLat('19.767980');
-					} else {
-						setLat(res.data[0].ubicacion[0].lat);
-					}
-					if (res.data[0].ubicacion[0].lng === '' || res.data[0].ubicacion[0].lng === 'undefined') {
-						setLng('-104.358159');
-					} else {
-						setLng(res.data[0].ubicacion[0].lng);
-					}
+					// if (res.data[0].ubicacion[0].lat === '' || res.data[0].ubicacion[0].lat === 'undefined') {
+					// 	setLat('19.767980');
+					// } else {
+					// 	setLat(res.data[0].ubicacion[0].lat);
+					// }
+					// if (res.data[0].ubicacion[0].lng === '' || res.data[0].ubicacion[0].lng === 'undefined') {
+					// 	setLng('-104.358159');
+					// } else {
+					// 	setLng(res.data[0].ubicacion[0].lng);
+					// }
 					if (res.data[0].linkFace !== 'undefined' && res.data[0].linkFace !== '') {
 						setFace(res.data[0].linkFace);
 					}
@@ -79,10 +80,11 @@ function MostrarRegistroTienda(props) {
 					if (res.data[0].linkTweeter !== 'undefined' && res.data[0].linkTweeter !== '') {
 						setTwitter(res.data[0].linkTweeter);
 					}
-				} else {
-					setLat('19.767980');
-					setLng('-104.358159');
-				}
+				} 
+				// else {
+				// 	setLat('19.767980');
+				// 	setLng('-104.358159');
+				// }
 				/*             if(res.data[0] !== {}){
                 setAction(true)
                 setLat(res.data[0].ubicacion[0].lat)
@@ -94,8 +96,8 @@ function MostrarRegistroTienda(props) {
 			})
 			.catch((err) => {
 				setLoading(false);
-				setLat('19.767980');
-				setLng('-104.358159');
+				// setLat('19.767980');
+				// setLng('-104.358159');
 				setDatosNegocio({});
 				if (err.response) {
 					notification.error({
@@ -184,7 +186,7 @@ function MostrarRegistroTienda(props) {
 								Anterior
 							</Button>
 						)}
-						{current < 2 && (
+						{current < 3 && (
 							<Button className="mx-1" type="primary" onClick={() => next()}>
 								Siguiente
 							</Button>
@@ -197,9 +199,10 @@ function MostrarRegistroTienda(props) {
 			>
 				<RegistroTienda
 					datosNegocio={datosNegocio}
+					setDatosNegocio={setDatosNegocio}
 					token={token}
 					setLoading={setLoading}
-					steps={[current,setCurrent]}
+					steps={[current, setCurrent]}
 					// setReloadInfo={setReloadInfo}
 					// drawnerClose={drawnerClose}
 				/>
@@ -321,6 +324,7 @@ function MostrarRegistroTienda(props) {
 							</span>
 						</p>
 					</div>
+					
 					<div className="col-lg-4 col-sm-12 shadow">
 						<p className="m-2 h5 font-weight-bold">Redes sociales:</p>
 						{face !== '' ? (
@@ -347,8 +351,24 @@ function MostrarRegistroTienda(props) {
 						)}
 					</div>
 				</div>
+				<div className="row justify-content-around mt-3">
+					<div className="col-lg-4 col-sm-12 shadow ">
+						<p className="h5 font-weight-bold">
+							Horarios de Atención:<span className="h5">
+								{' '}
+								{action === false ? 'Horarios de Atención:' : 
+									<div 
+										style={{lineHeight: "35px"}} 
+										dangerouslySetInnerHTML={{__html: datosNegocio.diasHorariosEmpresas}} 
+										className='mt-1 px-4 ' 
+									/>
+								}
+							</span>
+						</p>
+					</div>
+				</div>
 
-				<div className="row">
+				{/* <div className="row">
 					<div className="col-12">
 						<p className="m-3 h5">Ubicación actual: </p>
 						<Geolocalizacion
@@ -361,9 +381,9 @@ function MostrarRegistroTienda(props) {
 							nombreMarcador="AB soluciones Empresariales"
 						/>
 					</div>
-				</div>
+				</div> */}
 
-				<div className="row">
+				<div className="row mt-5">
 					<div className="col-lg-4 col-sm-12">
 						<p className="m-3 h3">Políticas de envío</p>
 						{politicasEnvio.length === 0 ? (

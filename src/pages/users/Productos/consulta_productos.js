@@ -3,8 +3,8 @@ import clienteAxios from '../../../config/axios';
 import { notification, Result, Row } from 'antd';
 import Pagination from '../../../components/Pagination/pagination';
 import queryString from 'query-string';
-import './productos.scss';
-import ComponenteProductos from './componente_productos';
+import './Cards_Normales/card_producto.scss';
+import Card_Producto from './Cards_Normales/card_producto';
 import Spin from '../../../components/Spin';
 
 function ConsultaProductos(props) {
@@ -53,7 +53,7 @@ function ConsultaProductos(props) {
 	}
 
 	const render = productos.map((productos) => {
-		return (<ComponenteProductos key={productos._id} productos={productos} />);
+		return (<Card_Producto key={productos._id} productos={productos} />);
 	});
 
 	if (!productos) {
@@ -68,7 +68,7 @@ function ConsultaProductos(props) {
 		<Spin spinning={loading}>
 			<div className="contenedor-home-background">
 				<div className="row float-left">
-					<h4 className="mb-0 text-center font-weight-bold">¡Conoce nuestros productos!</h4>
+					<p className="font-prin mb-0 text-center">¡Conoce nuestros productos!</p>
 				</div>
 			</div>
 			<div className="d-flex justify-content-center align-items-center">
